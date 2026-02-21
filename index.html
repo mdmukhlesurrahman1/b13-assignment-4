@@ -11,30 +11,42 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Link Css File -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Using Font Awesome -->
+
+    <script src="https://kit.fontawesome.com/057816acc6.js" crossorigin="anonymous"></script>
+
+
+    <!-- Google Font Added -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
 </head>
 
-<body class="bg-base-200 max-w-[1600px] mx-auto min-h-[100vh]">
+<body class="bg-base-200 max-w-[1600px] mx-auto min-h-[100vh] py-8">
     <header class="max-w-[85%] md:max-w-[70%] mx-auto">
 
-        <h1 class="head-title font-bold text-info-content text-2xl pt-8 mb-4">Job Application Tracker</h1>
+        <h1 class="head-title font-bold text-info-content text-2xl mb-4">Job Application Tracker</h1>
 
-        <div class="statistics flex gap-3 mb-4">
+        <div class="statistics flex gap-2 md:gap-4 mb-4">
 
-            <div class="card bg-base-100 shadow-sm flex-1">
+            <div class="card card-xs md:card-sm bg-base-100 shadow-sm flex-1">
                 <div class="card-body">
                     <h2 class="card-title text-info-content/70 text-sm">Total</h2>
                     <p id="total" class="font-bold text-info-content text-xl">0</p>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-sm flex-1">
+            <div class="card card-xs md:card-sm bg-base-100 shadow-sm flex-1">
                 <div class="card-body">
                     <h2 class="card-title text-info-content/70 text-sm">Interview</h2>
                     <p id="interview" class="font-bold text-success text-xl">0</p>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-sm flex-1">
+            <div class="card card-xs md:card-sm bg-base-100 shadow-sm flex-1">
                 <div class="card-body">
                     <h2 class="card-title text-info-content/70 text-sm">Rejected</h2>
                     <p id="rejected" class="font-bold text-error text-xl">0</p>
@@ -46,10 +58,53 @@
         <hr class="opacity-20 mb-4">
     </header>
     <main class="max-w-[85%] md:max-w-[70%] mx-auto">
-        <section class="available-jobs flex justify-between align-top">
+
+        <section class="available-jobs flex justify-between align-top mb-4">
             <h2 class="font-bold text-info-content text-xl">Available Jobs</h2>
             <p id="job-count" class="text-info-content/70 text-sm">0 jobs</p>
         </section>
+
+        <section class="job-section-toggle">
+            <button class="btn btn-soft btn-active btn-primary">All</button>
+            <button class="btn btn-soft btn-primary">Interview</button>
+            <button class="btn btn-soft btn-primary">Rejected</button>
+        </section>
+
+        <section class="all-jobs">
+
+            <div id="card1" class="card card-xs md:card-sm bg-base-100 shadow-sm w-full my-4">
+                <div class="card-body">
+                    <div class="flex justify-between items-center mb-1">
+                        <div>
+                            <h2 class="company-name text-xl font-bold text-info-content">Mobile First Crop</h2>
+                            <p class="position text-info-content/70 text-[16px]">React Native Developer</p>
+                        </div>
+                        <button class="btn btn-outline btn-error rounded-full p-3">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+                    <p class="text-info-content/70 text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+                    <div class="badge badge-soft badge-primary text-info-content my-1">NOT APPLIED</div>
+                    <p class="text-info-content/70 text-[14px] mb-1">Build cross-platform mobile applications using
+                        React Native. Work on products used by millions of users worldwide.</p>
+                    <div>
+                        <button class="btn btn-outline btn-success">Interview</button>
+                        <button class="btn btn-outline btn-error">Rejected</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="interview">
+
+        </section>
+
+        <section class="rejected">
+
+        </section>
+
     </main>
 </body>
 
