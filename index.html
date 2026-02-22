@@ -29,6 +29,9 @@
 </head>
 
 <body class="bg-base-200 max-w-[1600px] mx-auto min-h-[100vh] py-8">
+
+    <!-- Header Section -->
+
     <header class="max-w-[85%] md:max-w-[70%] mx-auto">
 
         <h1 class="head-title font-bold text-info-content text-2xl mb-4">Job Application Tracker</h1>
@@ -58,7 +61,10 @@
 
         <hr class="opacity-20 mb-4">
     </header>
+
     <main class="max-w-[85%] md:max-w-[70%] mx-auto">
+
+        <!-- Title and Toggle Buttons Section -->
 
         <section class="available-jobs flex justify-between items-center mb-4">
             <h2 class="font-bold text-info-content text-xl">Available Jobs</h2>
@@ -66,10 +72,19 @@
         </section>
 
         <section class="job-section-toggle flex gap-2">
-            <button id="allBtn" class="btn btn-soft btn-active btn-primary">All</button>
-            <button id="InterviewBtn" class="btn btn-soft btn-primary">Interview</button>
-            <button id="rejectedBtn" class="btn btn-soft btn-primary">Rejected</button>
+
+            <button onclick="toggleStyle('allBtn'), sectionToggle('all-jobs-section')" id="allBtn"
+                class="btn btn-soft btn-active btn-primary">All</button>
+
+            <button onclick="toggleStyle('interviewBtn'), sectionToggle('interview-section')" id="interviewBtn"
+                class="btn btn-soft btn-primary">Interview</button>
+
+            <button onclick="toggleStyle('rejectedBtn'), sectionToggle('rejected-section')" id="rejectedBtn"
+                class="btn btn-soft btn-primary">Rejected</button>
+
         </section>
+
+        <!-- Jobs Section -->
 
         <section id="all-jobs-section">
 
@@ -95,6 +110,7 @@
 
                 </div>
             </div>
+
             <div class=" jobPost card bg-base-100 shadow-sm w-full my-4">
                 <div class="card-body p-4 md:p-6">
                     <div class="flex justify-between items-center mb-1">
@@ -117,6 +133,7 @@
 
                 </div>
             </div>
+
             <div class=" jobPost card bg-base-100 shadow-sm w-full my-4">
                 <div class="card-body p-4 md:p-6">
                     <div class="flex justify-between items-center mb-1">
@@ -139,6 +156,7 @@
 
                 </div>
             </div>
+
             <div class=" jobPost card bg-base-100 shadow-sm w-full my-4">
                 <div class="card-body p-4 md:p-6">
                     <div class="flex justify-between items-center mb-1">
@@ -161,6 +179,7 @@
 
                 </div>
             </div>
+
             <div class=" jobPost card bg-base-100 shadow-sm w-full my-4">
                 <div class="card-body p-4 md:p-6">
                     <div class="flex justify-between items-center mb-1">
@@ -183,6 +202,7 @@
 
                 </div>
             </div>
+
             <div class=" jobPost card bg-base-100 shadow-sm w-full my-4">
                 <div class="card-body p-4 md:p-6">
                     <div class="flex justify-between items-center mb-1">
@@ -205,6 +225,7 @@
 
                 </div>
             </div>
+
             <div class=" jobPost card bg-base-100 shadow-sm w-full my-4">
                 <div class="card-body p-4 md:p-6">
                     <div class="flex justify-between items-center mb-1">
@@ -227,6 +248,7 @@
 
                 </div>
             </div>
+
             <div class=" jobPost card bg-base-100 shadow-sm w-full my-4">
                 <div class="card-body p-4 md:p-6">
                     <div class="flex justify-between items-center mb-1">
@@ -251,6 +273,8 @@
             </div>
 
         </section>
+
+        <!-- Interview Section -->
 
         <section id="interview-section" class="hidden">
 
@@ -261,6 +285,8 @@
             </div>
 
         </section>
+
+        <!-- Rejected Section -->
 
         <section id="rejected-section" class="hidden">
 
@@ -276,7 +302,8 @@
 
     <!-- javascript -->
 
-    <script src="script/main.js"></script>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
