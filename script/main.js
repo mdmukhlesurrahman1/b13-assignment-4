@@ -32,3 +32,13 @@ rejectedBtn.addEventListener("click", function () {
     interviewSection.classList.add("hidden");
     rejectedSection.classList.remove("hidden");
 })
+
+
+// count all jobs and set text
+
+const getAllJobs = document.getElementsByClassName("jobPost");
+const countAll = getAllJobs.length;
+
+document.getElementById("total-count").innerText = countAll;
+document.getElementById("job-count").innerText = `${countAll} jobs`;
+
