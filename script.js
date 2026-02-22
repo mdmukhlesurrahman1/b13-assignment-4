@@ -1,11 +1,19 @@
-// get document
+// get count
 
 let allCount = document.getElementById("total-count");
 let interviewCount = document.getElementById("interview-count");
 let rejectedCount = document.getElementById("rejected-count");
 let jobCount = document.getElementById("job-count");
 
+// get section
+
+let mainContainer = document.querySelector('main');
 let allJobs = document.getElementById("all-jobs-section");
+let interviewSection = document.getElementById('interview-section');
+let rejectedSection = document.getElementById('rejected-section');
+
+// declare empty array
+
 let interviewJobs = [];
 let rejectedJobs = [];
 
@@ -25,17 +33,19 @@ function toggleStyle(id) {
     document.getElementById(id).classList.add('btn-active');
 }
 
-// get section
-
-let allJobSection = document.getElementById('all-jobs-section');
-let interviewSection = document.getElementById('interview-section');
-let rejectedSection = document.getElementById('rejected-section');
-
 // toggle section
 
 function sectionToggle(id) {
-    allJobSection.classList.add('hidden');
+    allJobs.classList.add('hidden');
     interviewSection.classList.add('hidden');
     rejectedSection.classList.add('hidden');
     document.getElementById(id).classList.remove('hidden');
 }
+
+// delegation
+
+mainContainer.addEventListener('click', function(event){
+    const parent = event.target.parentNode.parentNode;
+    const companyName = parent.querySelector(".company-name").innerText;
+    console.log(companyName);
+})
