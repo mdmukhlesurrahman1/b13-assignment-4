@@ -24,6 +24,7 @@
 
         * {
             font-family: "Geist", sans-serif;
+            box-sizing: border-box;
         }
     </style>
 
@@ -33,7 +34,7 @@
 
     <!-- Header Section -->
 
-    <header class="max-w-[85%] md:max-w-[70%] mx-auto">
+    <header class="max-w-[85%] md:max-w-[70%] mx-auto bg-base-200">
 
         <h1 class="head-title font-bold text-info-content text-2xl mb-4">Job Application Tracker</h1>
 
@@ -77,10 +78,10 @@
             <button onclick="toggleStyle('allBtn'), sectionToggle('all-jobs-section')" id="allBtn"
                 class="btn btn-soft btn-active btn-primary">All</button>
 
-            <button onclick="toggleStyle('interviewBtn'), sectionToggle('interview-section')" id="interviewBtn"
+            <button onclick="toggleStyle('interviewBtn'), sectionToggle('interview-section'), interviewRendering()" id="interviewBtn"
                 class="btn btn-soft btn-primary">Interview</button>
 
-            <button onclick="toggleStyle('rejectedBtn'), sectionToggle('rejected-section')" id="rejectedBtn"
+            <button onclick="toggleStyle('rejectedBtn'), sectionToggle('rejected-section'), rejectedRendering()" id="rejectedBtn"
                 class="btn btn-soft btn-primary">Rejected</button>
 
         </section>
@@ -104,8 +105,8 @@
                     </div>
                     <p class="salary text-info-content/70 text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
                     <div class="badge badge-soft badge-primary text-info-content my-1">NOT APPLIED</div>
-                    <p class="details text-info-content/70 text-[14px] mb-1">Build cross-platform mobile applications using
-                        React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="details text-info-content/70 text-[14px] mb-1">Build cross-platform mobile applications
+                        using React Native. Work on products used by millions of users worldwide.</p>
                     <div class="flex gap-2">
                         <button class="job-interview btn btn-outline btn-success">Interview</button>
                         <button class="job-rejected btn btn-outline btn-error">Rejected</button>
@@ -127,9 +128,11 @@
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
-                    <p class="salary text-info-content/70 text-[14px]">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                    <p class="salary text-info-content/70 text-[14px]">Los Angeles, CA • Part-time • $80,000 - $120,000
+                    </p>
                     <div class="badge badge-soft badge-primary text-info-content my-1">NOT APPLIED</div>
-                    <p class="details text-info-content/70 text-[14px] mb-1">Create stunning web experiences for high-profile
+                    <p class="details text-info-content/70 text-[14px] mb-1">Create stunning web experiences for
+                        high-profile
                         clients. Must have portfolio and experience with modern web design trends.</p>
                     <div class="flex gap-2">
                         <button class="job-interview btn btn-outline btn-success">Interview</button>
@@ -179,7 +182,8 @@
                     </div>
                     <p class="salary text-info-content/70 text-[14px]">Seattle, WA • Full-time • $140,000 - $190,000</p>
                     <div class="badge badge-soft badge-primary text-info-content my-1">NOT APPLIED</div>
-                    <p class="details text-info-content/70 text-[14px] mb-1">Design and maintain scalable backend systems using
+                    <p class="details text-info-content/70 text-[14px] mb-1">Design and maintain scalable backend
+                        systems using
                         Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                     <div class="flex gap-2">
                         <button class="job-interview btn btn-outline btn-success">Interview</button>
@@ -204,7 +208,8 @@
                     </div>
                     <p class="salary text-info-content/70 text-[14px]">Austin, TX • Full-time • $110,000 - $150,000</p>
                     <div class="badge badge-soft badge-primary text-info-content my-1">NOT APPLIED</div>
-                    <p class="details text-info-content/70 text-[14px] mb-1">Create beautiful and functional user interfaces for
+                    <p class="details text-info-content/70 text-[14px] mb-1">Create beautiful and functional user
+                        interfaces for
                         our suite of products. Strong design skills and frontend development expertise required.</p>
                     <div class="flex gap-2">
                         <button class="job-interview btn btn-outline btn-success">Interview</button>
@@ -229,7 +234,8 @@
                     </div>
                     <p class="salary text-info-content/70 text-[14px]">New York, NY • Full-time • $130,000 - $170,00</p>
                     <div class="badge badge-soft badge-primary text-info-content my-1">NOT APPLIED</div>
-                    <p class="details text-info-content/70 text-[14px] mb-1">Build enterprise applications with JavaScript and
+                    <p class="details text-info-content/70 text-[14px] mb-1">Build enterprise applications with
+                        JavaScript and
                         modern frameworks. We offer competitive compensation, health insurance, and professional
                         development opportunities.</p>
                     <div class="flex gap-2">
@@ -255,7 +261,8 @@
                     </div>
                     <p class="salary text-info-content/70 text-[14px]">Remote • Full-time • $120,000 - $160,000</p>
                     <div class="badge badge-soft badge-primary text-info-content my-1">NOT APPLIED</div>
-                    <p class="details text-info-content/70 text-[14px] mb-1">Join our fast-growing startup and work on our core
+                    <p class="details text-info-content/70 text-[14px] mb-1">Join our fast-growing startup and work on
+                        our core
                         platform. Experience with Node.js and React required. Great benefits and equity package
                         included.</p>
                     <div class="flex gap-2">
@@ -279,7 +286,8 @@
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
-                    <p class="salary text-info-content/70 text-[14px]">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+                    <p class="salary text-info-content/70 text-[14px]">San Francisco, CA • Full-time • $130,000 -
+                        $175,000</p>
                     <div class="badge badge-soft badge-primary text-info-content my-1">NOT APPLIED</div>
                     <p class="details text-info-content/70 text-[14px] mb-1">We are looking for an experienced Frontend
                         Developer to build scalable web applications using React and TypeScript. You will work with a
