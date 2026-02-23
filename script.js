@@ -18,14 +18,14 @@ let interviewJobs = [];
 let rejectedJobs = [];
 
 // set value
-function count(){
-allCount.innerText = allJobs.children.length;
-interviewCount.innerText = interviewJobs.length;
-rejectedCount.innerText = rejectedJobs.length;
+function count() {
+    allCount.innerText = allJobs.children.length;
+    interviewCount.innerText = interviewJobs.length;
+    rejectedCount.innerText = rejectedJobs.length;
+    jobCount.innerText = `${allJobs.children.length} jobs`;
 }
 
 count();
-jobCount.innerText = `${allJobs.children.length} jobs`;
 
 // toggle button
 
@@ -77,7 +77,7 @@ mainContainer.addEventListener('click', function (event) {
         }
 
         rejectedJobs = rejectedJobs.filter(item => item.companyName != jobInfo.companyName);
-        
+
         count();
 
     }
@@ -111,6 +111,14 @@ mainContainer.addEventListener('click', function (event) {
         interviewJobs = interviewJobs.filter(item => item.companyName != jobInfo.companyName);
 
         rejectedRendering();
+        count();
+
+    }
+    else if (event.target.classList.contains('deleteBtn')) {
+
+        const parent = event.target.parentNode.parentNode.parentNode;
+        parent.remove();
+
         count();
 
     }
