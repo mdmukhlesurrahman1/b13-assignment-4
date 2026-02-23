@@ -114,13 +114,16 @@ mainContainer.addEventListener('click', function (event) {
         count();
 
     }
-    else if (event.target.classList.contains('deleteBtn')) {
-
-        const parent = event.target.parentNode.parentNode.parentNode;
-        parent.remove();
-
+    else if (event.target.classList.contains('deleteBtn') || event.target.classList.contains('fa-trash-can')) {
+        if(event.target.classList.contains('deleteBtn')){
+            const parent = event.target.parentNode.parentNode.parentNode;
+            parent.remove();
+        }
+        else if(event.target.classList.contains('fa-trash-can')){
+            const parent = event.target.parentNode.parentNode.parentNode.parentNode;
+            parent.remove();
+        }
         count();
-
     }
 
 })
