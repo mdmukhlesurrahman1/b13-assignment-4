@@ -21,6 +21,19 @@
 
 ### 3. What is Event Bubbling? And how does it work?
 
+	Ans: Event bubbling is a dom event propagation mechanism.
+
+		 It works 3 Phases:
+
+		 1. Capturing Phase: the event capture from root to target.
+		 2. Target Phase: the event hits the target.
+		 3. Bubbling Phase: the event bubbling from the target to root.
+
 ### 4. What is Event Delegation in JavaScript? Why is it useful?
 
+	Ans: Event delegation is a JavaScript method that attaching a single event listener to a common parent element to manage events for all of its child elements.
+
 ### 5. What is the difference between preventDefault() and stopPropagation() methods?
+
+	Ans: 	  preventDefault() use for cancels browser default behavior.
+		 and, stopPropagation() use for stops event bubbling.
