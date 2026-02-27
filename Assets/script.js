@@ -10,10 +10,10 @@ const noJobSection = document.getElementById("no-job-section");
 // Switch Tab Create
 function switchTab(tab) {
     const tabs = ["all-btn", "interview-btn", "rejected-btn"]
+    currentTab = tab;
 
     // Button Style
     for (const t of tabs) {
-        currentTab = t;
         const tabName = document.getElementById(t);
         if (t === tab) {
             tabName.classList.add('btn-active');
@@ -36,18 +36,7 @@ function switchTab(tab) {
     } else {
         allJobsSection.classList.remove('hidden');
     }
-}
-
-// Count Update
-function count() {
-    const totalCount = document.getElementById("total-count");
-    const interviewCount = document.getElementById("interview-count");
-    const rejectedCount = document.getElementById("rejected-count");
-    const jobCount = document.getElementById("job-count");
-
-    totalCount.innerText = allJobsSection.children.length;
-    interviewCount.innerText = interviewSection.children.length;
-    rejectedCount.innerText = rejectedSection.children.length;
+    count();
 }
 
 // Main Part Function
@@ -75,7 +64,33 @@ document.getElementById("jobs").addEventListener('click', function (event) {
     count();
 })
 
+// Get All Count Display
+const totalCount = document.getElementById("total-count");
+const interviewCount = document.getElementById("interview-count");
+const rejectedCount = document.getElementById("rejected-count");
+const jobCount = document.getElementById("job-count");
 
-// Body Function Call
+// Count Update
+function count() {
+    const counts = {
+        "all-btn": allJobsSection.children.length,
+        "interview-btn": interviewSection.children.length,
+        "rejected-btn": rejectedSection.children.length,
+    };
+
+    totalCount.innerText = counts["all-btn"];
+    interviewCount.innerText = counts["interview-btn"];
+    rejectedCount.innerText = counts["rejected-btn"];
+    jobCount.innerText = counts[currentTab] + ' jobs';
+
+    // NO Job Show Hide Function
+    if (counts[currentTab] < 1) {
+        noJobSection.classList.remove("hidden");
+    }
+    else {
+        noJobSection.classList.add("hidden");
+    }
+}
+
 switchTab(currentTab);
 count();
