@@ -49,13 +49,13 @@ document.getElementById("jobs").addEventListener('click', function (event) {
     if (clicked.classList.contains('job-interview-btn')) {
         status.innerText = "INTERVIEWED";
         status.className = ('badge badge-success my-1');
-        card.classList.add('border-l-4', 'border-success');
+        card.className = ('job-post card bg-base-100 shadow-sm w-full my-4 border-l-4 border-success');
         interviewSection.appendChild(card);
     }
     else if (clicked.classList.contains('job-rejected-btn')) {
         status.innerText = "REJECTED";
         status.className = ('badge badge-error my-1');
-        card.classList.add('border-l-4', 'border-error');
+        card.className = ('job-post card bg-base-100 shadow-sm w-full my-4 border-l-4 border-error');
         rejectedSection.appendChild(card);
     }
     else if (clicked.classList.contains('delete-btn')) {
